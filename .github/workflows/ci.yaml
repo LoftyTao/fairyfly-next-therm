@@ -1,0 +1,17 @@
+---
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  syntax:
+    name: Python syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: compile source and tests
+        run: python -m compileall -q fairyfly_hygrotherm fairyfly_next_therm tests

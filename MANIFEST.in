@@ -1,0 +1,5 @@
+include fairyfly_next_therm/_templates/*.xml
+include README.zh-CN.md
+recursive-exclude tests *
+recursive-exclude .github *
+exclude .gitignore
